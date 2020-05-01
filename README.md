@@ -5,6 +5,27 @@
 - [Stack](#Stack)
 - [Queue](#Queue)
 
+## How to use
+
+> go get github.com/skynocover/GoStackQueue
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/skynocover/GoStackQueue"
+)
+
+func main() {
+    var q DataStr.Stack
+    for i := 0; i < 10; i++ {
+        q.Push(i)
+    }
+    q.Prt()
+}
+```
+
 ## 結構
 
 ### Queue
