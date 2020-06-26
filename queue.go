@@ -20,17 +20,21 @@ func (this *Queue) Len() int { return this.length }
 
 func (this *Queue) Prt() {
 	temp := this.head
-	fmt.Print(temp.value, ", ")
-	for temp.next != nil {
-		temp = temp.next
+	if this.length != 0 {
 		fmt.Print(temp.value, ", ")
+		for temp.next != nil {
+			temp = temp.next
+			fmt.Print(temp.value, ", ")
+		}
+	} else {
+		fmt.Print(temp)
 	}
 	fmt.Println()
 }
 
 func (this *Queue) Push(value interface{}) {
 	newnode := node{value, this.rear, nil}
-	if this.rear == nil {
+	if this.length != 0 {
 		this.rear = &newnode
 		this.head = &newnode
 	} else {
