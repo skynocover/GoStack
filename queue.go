@@ -34,7 +34,7 @@ func (this *Queue) Prt() {
 
 func (this *Queue) Push(value interface{}) {
 	newnode := node{value, this.rear, nil}
-	if this.length != 0 {
+	if this.length == 0 {
 		this.rear = &newnode
 		this.head = &newnode
 	} else {

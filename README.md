@@ -96,7 +96,7 @@ func (this *Queue) Prt() {
 ```go
 func (this *Queue) Push(value interface{}) {
 	newnode := node{value, this.rear, nil}
-	if this.length!=0 { //利用長度判斷而不是用rear判斷,因為Get時是修改Head而不是Rear,因此用length判斷較為直觀
+	if this.length==0 { //利用長度判斷而不是用rear判斷,因為Get時是修改Head而不是Rear,因此用length判斷較為直觀
 		this.rear = &newnode
 		this.head = &newnode
 	} else {
